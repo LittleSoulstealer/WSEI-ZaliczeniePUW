@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Zaliczenie"
+             x:Class="Zaliczenie.MainPage"
+             BackgroundImage="kitchenbg.png">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="{Binding Title}"  
+           HorizontalOptions="Center"
+               FontSize="Large"
+          
+        />
+        <Picker
+           
+            Title="Wybierz produkt" 
+            ItemsSource="{Binding ListOfProducts}"
+            ItemDisplayBinding="{Binding Name}"
+            SelectedItem="{Binding Item} "
+            SelectedIndex="{Binding Index}"
+            />
+        <Entry Placeholder="Wprowadź ile masz gram produktu." Text="{Binding EntryText}"  Keyboard="Numeric"/>
+        
+        <Button Text="Przelicz!"
+                Command="{Binding ConvertButton}"/>
+
+        <Label Text="{Binding Result}"
+               FontSize="Medium"
+               />
+    </StackLayout>
+
+</ContentPage>
